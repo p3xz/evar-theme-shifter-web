@@ -70,6 +70,17 @@ export default function TermsPage() {
           extensions page. Removing it stops the dark theme and deletes its
           settings from your browser.
         </p>
+        <p>
+          If you own or run a site that EvarTheme Shifter themes, and you want
+          the extension removed for your site, contact us at{" "}
+          <a
+            href="mailto:namishyadavv@gmail.com"
+            className="underline underline-offset-4 hover:opacity-80"
+          >
+            namishyadavv@gmail.com
+          </a>
+          .
+        </p>
       </LegalSection>
     </LegalPage>
   );

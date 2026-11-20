@@ -72,8 +72,14 @@ export default function PrivacyPage() {
       </LegalSection>
       <LegalSection title="Contact">
         <p>
-          If you have a question about this policy, contact the developer
-          through the store listing.
+          If you have a question about this policy, contact the developer at{" "}
+          <a
+            href="mailto:namishyadavv@gmail.com"
+            className="underline underline-offset-4 hover:opacity-80"
+          >
+            namishyadavv@gmail.com
+          </a>{" "}
+          or through the store listing.
         </p>
       </LegalSection>
       <LegalSection title="Changes">

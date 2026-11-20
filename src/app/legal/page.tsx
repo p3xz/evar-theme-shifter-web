@@ -43,10 +43,30 @@ export default function LegalTermsPage() {
           proctored exam or quiz.
         </p>
       </LegalSection>
+      <LegalSection title="Removal requests">
+        <p>
+          If you own or run a site that EvarTheme Shifter themes, and you want
+          the extension removed for your site, contact us at{" "}
+          <a
+            href="mailto:namishyadavv@gmail.com"
+            className="underline underline-offset-4 hover:opacity-80"
+          >
+            namishyadavv@gmail.com
+          </a>
+          . Tell us which site it is and why you want it removed, and we will
+          remove support for that site in a future update.
+        </p>
+      </LegalSection>
       <LegalSection title="Contact">
         <p>
-          If you have a legal question, contact the developer through the
-          store listing.
+          If you have a legal question, contact the developer at{" "}
+          <a
+            href="mailto:namishyadavv@gmail.com"
+            className="underline underline-offset-4 hover:opacity-80"
+          >
+            namishyadavv@gmail.com
+          </a>{" "}
+          or through the store listing.
         </p>
       </LegalSection>
     </LegalPage>
