@@ -89,6 +89,8 @@ const THEMES: Record<ThemeId, ThemeConfig> = {
 
 const THEME_ORDER: ThemeId[] = ["paper", "frost", "lilac"];
 
+const EDGE_ADDONS_URL =
+  "https://microsoftedge.microsoft.com/addons/detail/aiifdkhhddkaidlikcaponeakogckfmn";
 const CHROME_DOWNLOAD_URL =
   "https://github.com/p3xz/evar-theme-shifter/releases/download/v1.4.6/evar-theme-shifter-v4.zip";
 const EDGE_DOWNLOAD_URL =
@@ -133,12 +135,11 @@ const BROWSER_INSTALL_CARDS = [
   {
     browser: "Edge",
     steps: [
-      "Download the Edge zip",
-      "Unzip it, you will get a folder named evar-theme-shifter",
-      "Open edge://extensions in Edge",
-      "Turn on Developer mode, left side",
-      "Click Load unpacked",
-      "Select the evar-theme-shifter folder, not the zip",
+      "Click Get it on Edge in the Download section below",
+      "Click Get on the Edge Add-ons page",
+      "Click Add extension when Edge asks",
+      "Open your college portal or LMS, the dark theme is on",
+      "Manual install instead: download the Edge zip, unzip it, open edge://extensions, turn on Developer mode, click Load unpacked and select the unzipped evar-theme-shifter folder",
     ],
   },
   {
@@ -158,6 +159,11 @@ const FAQ_ITEMS = [
   {
     question: "Is it free?",
     answer: "Yes.",
+  },
+  {
+    question: "Is it on the Edge store?",
+    answer:
+      "Yes, EvarTheme Shifter is live on Microsoft Edge Add-ons, install it in one click from the Get it on Edge button in the Download section.",
   },
   {
     question: "Does it work on LMS?",
@@ -1028,13 +1034,16 @@ export function EvarThemeLanding() {
                 className="mt-4 max-w-xl text-base leading-relaxed sm:text-lg"
                 style={{ color: theme.textMuted }}
               >
-                Download the latest release from GitHub, unzip it, and follow
-                the browser install steps above.
+                Get it in one click from Microsoft Edge Add-ons, or download
+                the zip for Chrome and Firefox and follow the browser install
+                steps above.
               </p>
 
               <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
                 <a
-                  href={CHROME_DOWNLOAD_URL}
+                  href={EDGE_ADDONS_URL}
+                  target="_blank"
+                  rel="noreferrer"
                   className="theme-transition inline-flex min-h-[60px] items-center gap-3 rounded-2xl px-9 py-4 text-lg font-bold shadow-lg hover:scale-[1.02]"
                   style={{
                     backgroundColor: theme.buttonBg,
@@ -1042,7 +1051,7 @@ export function EvarThemeLanding() {
                   }}
                 >
                   <Download className="h-5 w-5" aria-hidden="true" />
-                  <span>Download for Chrome</span>
+                  <span>Get it on Edge</span>
                 </a>
 
                 <span
@@ -1053,13 +1062,29 @@ export function EvarThemeLanding() {
                 </span>
               </div>
 
+              <p
+                className="mt-4 text-sm"
+                style={{ color: theme.textMuted }}
+              >
+                Official Edge Add-ons listing, one click install, version
+                1.4.6.
+              </p>
+
               <div className="mt-6 flex flex-wrap items-center justify-center gap-6 text-sm font-medium">
+                <a
+                  href={CHROME_DOWNLOAD_URL}
+                  className="inline-flex items-center gap-1.5 underline underline-offset-4 hover:opacity-80"
+                  style={{ color: theme.textPrimary }}
+                >
+                  <span>Download for Chrome (manual install)</span>
+                  <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+                </a>
                 <a
                   href={EDGE_DOWNLOAD_URL}
                   className="inline-flex items-center gap-1.5 underline underline-offset-4 hover:opacity-80"
                   style={{ color: theme.textPrimary }}
                 >
-                  <span>Edge</span>
+                  <span>Edge zip (manual install)</span>
                   <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
                 </a>
                 <a
@@ -1079,7 +1104,7 @@ export function EvarThemeLanding() {
             id="legal"
             className="mx-auto w-full max-w-6xl px-5 py-20 sm:px-8 lg:px-12"
           >
-            <div className="grid gap-6 md:grid-cols-3">
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
               <article
                 className="surface-panel theme-transition rounded-2xl border p-7 backdrop-blur-md"
                 style={panelStyle}
@@ -1118,6 +1143,42 @@ export function EvarThemeLanding() {
                   collect, store or send your data, passwords or browsing
                   history anywhere.
                 </p>
+                <a
+                  href="/privacy"
+                  className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold underline underline-offset-4 hover:opacity-80"
+                  style={{ color: theme.textPrimary }}
+                >
+                  <span>Read the full Privacy Policy</span>
+                  <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+                </a>
+              </article>
+
+              <article
+                className="surface-panel theme-transition rounded-2xl border p-7 backdrop-blur-md"
+                style={panelStyle}
+              >
+                <p
+                  className="font-mono text-xs uppercase tracking-[0.16em]"
+                  style={{ color: theme.color }}
+                >
+                  Terms of Service
+                </p>
+                <h2 className="mt-2 text-xl font-bold">Study only</h2>
+                <p
+                  className="mt-3 text-base leading-relaxed"
+                  style={{ color: theme.textMuted }}
+                >
+                  By installing EvarTheme Shifter you agree to use it for
+                  study only, on your own browser, at your own risk.
+                </p>
+                <a
+                  href="/terms"
+                  className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold underline underline-offset-4 hover:opacity-80"
+                  style={{ color: theme.textPrimary }}
+                >
+                  <span>Read the full Terms of Service</span>
+                  <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+                </a>
               </article>
 
               <article
@@ -1139,6 +1200,14 @@ export function EvarThemeLanding() {
                   for study only, do not use it during an online proctored exam
                   or quiz.
                 </p>
+                <a
+                  href="/legal"
+                  className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold underline underline-offset-4 hover:opacity-80"
+                  style={{ color: theme.textPrimary }}
+                >
+                  <span>Read the full Legal Terms</span>
+                  <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+                </a>
               </article>
             </div>
           </section>
@@ -1197,6 +1266,27 @@ export function EvarThemeLanding() {
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-medium">
               <span className="font-semibold">EvarTheme Shifter</span>
               <span style={{ color: theme.color }}>Dark Mode Extension</span>
+              <a
+                href="/privacy"
+                className="underline-offset-4 hover:underline"
+                style={{ color: theme.textMuted }}
+              >
+                Privacy Policy
+              </a>
+              <a
+                href="/terms"
+                className="underline-offset-4 hover:underline"
+                style={{ color: theme.textMuted }}
+              >
+                Terms of Service
+              </a>
+              <a
+                href="/legal"
+                className="underline-offset-4 hover:underline"
+                style={{ color: theme.textMuted }}
+              >
+                Legal
+              </a>
             </div>
             <p className="text-sm" style={{ color: theme.textMuted }}>
               Built for college students.
