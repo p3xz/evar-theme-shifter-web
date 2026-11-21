@@ -14,25 +14,25 @@ export default function LegalTermsPage() {
         <p>
           EvarTheme Shifter is not an official product of any college,
           university, or any of the sites it themes. It is not endorsed by,
-          sponsored by, or connected to any college, university, or any of
-          those sites. It is an independent student built tool.
+          sponsored by, or connected to any college, university, or any of those
+          sites. It is an independent student built tool.
         </p>
       </LegalSection>
       <LegalSection title="No affiliation">
         <p>
           The college portal and college LMS are referred to on this site only
           as college portal and college LMS. No college name, logo, crest,
-          banner, or branding is used anywhere on this site or in the
-          extension, except where the extension must match the site&apos;s own
-          logo files to keep them visible on a dark background, which is a
-          technical need, not branding.
+          banner, or branding is used anywhere on this site or in the extension,
+          except where the extension must match the site&apos;s own logo files
+          to keep them visible on a dark background, which is a technical need,
+          not branding.
         </p>
       </LegalSection>
       <LegalSection title="Intellectual property">
         <p>
-          The sites EvarTheme Shifter themes belong to their owners.
-          EvarTheme Shifter does not copy, host, or redistribute their
-          content. It only changes how their pages look in your own browser.
+          The sites EvarTheme Shifter themes belong to their owners. EvarTheme
+          Shifter does not copy, host, or redistribute their content. It only
+          changes how their pages look in your own browser.
         </p>
       </LegalSection>
       <LegalSection title="Liability">

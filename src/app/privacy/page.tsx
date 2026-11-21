@@ -18,43 +18,41 @@ export default function PrivacyPage() {
       <LegalSection title="What we collect">
         <p>
           Nothing. EvarTheme Shifter does not collect, store, send, sell, or
-          share any personal data, browsing history, passwords, marks,
-          courses, or any other information. It does not use analytics,
-          tracking, or ads, now or in the future.
+          share any personal data, browsing history, passwords, marks, courses,
+          or any other information. It does not use analytics, tracking, or ads,
+          now or in the future.
         </p>
       </LegalSection>
       <LegalSection title="What it does on a page">
         <p>
           When you open one of the sites listed above, the extension changes
           only the appearance of that page in your own browser: background,
-          text, link, input, table, card, pill, badge, menu and button
-          colours, element by element. It does not use a global invert filter,
-          and images, logos, videos and PDFs stay normal. It does not read
-          your login details, your courses, your marks, or any other page
-          content, and it does not send anything anywhere.
+          text, link, input, table, card, pill, badge, menu and button colours,
+          element by element. It does not use a global invert filter, and
+          images, logos, videos and PDFs stay normal. It does not read your
+          login details, your courses, your marks, or any other page content,
+          and it does not send anything anywhere.
         </p>
       </LegalSection>
       <LegalSection title="Settings">
         <p>
-          Your on/off state, theme (Dark, OLED black or Dim) and brightness
-          (70 to 110 percent) are saved only in your browser&apos;s own sync
-          storage, so they follow your browser profile. Nothing is sent to us
-          or to any third party.
+          Your on/off state, theme (Dark, OLED black or Dim) and brightness (70
+          to 110 percent) are saved only in your browser&apos;s own sync
+          storage, so they follow your browser profile. Nothing is sent to us or
+          to any third party.
         </p>
       </LegalSection>
       <LegalSection title="Permissions">
         <ul className="list-disc space-y-2 pl-5">
+          <li>storage: saves only your own theme settings, as above.</li>
           <li>
-            storage: saves only your own theme settings, as above.
+            Host permissions: limited to the sites the extension themes, listed
+            above. The content script only runs on those sites, to apply the
+            dark theme. It does not run on any other site.
           </li>
           <li>
-            Host permissions: limited to the sites the extension themes,
-            listed above. The content script only runs on those sites, to
-            apply the dark theme. It does not run on any other site.
-          </li>
-          <li>
-            No remote code: all JavaScript and CSS are included in the
-            extension package. No external scripts, no eval.
+            No remote code: all JavaScript and CSS are included in the extension
+            package. No external scripts, no eval.
           </li>
         </ul>
       </LegalSection>

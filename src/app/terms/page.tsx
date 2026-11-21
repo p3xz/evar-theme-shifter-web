@@ -11,9 +11,8 @@ export default function TermsPage() {
   return (
     <LegalPage title="Terms of Service">
       <p>
-        By installing or using EvarTheme Shifter, you agree to these terms.
-        If you do not agree, do not install it, and remove it if you already
-        have.
+        By installing or using EvarTheme Shifter, you agree to these terms. If
+        you do not agree, do not install it, and remove it if you already have.
       </p>
       <LegalSection title="What it is">
         <p>
@@ -26,7 +25,9 @@ export default function TermsPage() {
       </LegalSection>
       <LegalSection title="Use">
         <ul className="list-disc space-y-2 pl-5">
-          <li>Use it for study only, on your own browser, on your own device.</li>
+          <li>
+            Use it for study only, on your own browser, on your own device.
+          </li>
           <li>
             Do not use it during an online proctored exam or quiz. Proctoring
             software may treat any extension as a violation, and that is your
@@ -44,8 +45,8 @@ export default function TermsPage() {
       </LegalSection>
       <LegalSection title="No account, no data">
         <p>
-          There is no account, no sign up, and no data collected. Your
-          settings save only in your browser.
+          There is no account, no sign up, and no data collected. Your settings
+          save only in your browser.
         </p>
       </LegalSection>
       <LegalSection title="As is, no warranty">

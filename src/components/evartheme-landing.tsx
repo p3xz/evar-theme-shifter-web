@@ -185,7 +185,6 @@ export function EvarThemeLanding() {
   const [themeId, setThemeId] = useState<ThemeId>("paper");
   const [hasScrolled, setHasScrolled] = useState(false);
 
-  // Interactive preview controls mirroring the Chrome extension features
   const [previewEnabled, setPreviewEnabled] = useState(true);
   const [previewPreset, setPreviewPreset] = useState<PreviewPreset>("Dark");
   const [previewBrightness, setPreviewBrightness] = useState(100);
@@ -194,13 +193,13 @@ export function EvarThemeLanding() {
 
   useEffect(() => {
     const schemeMeta = document.querySelector<HTMLMetaElement>(
-      'meta[name="color-scheme"]'
+      'meta[name="color-scheme"]',
     );
     if (schemeMeta) {
       schemeMeta.content = theme.isDark ? "dark" : "light";
     }
     const themeColorMeta = document.querySelector<HTMLMetaElement>(
-      'meta[name="theme-color"]'
+      'meta[name="theme-color"]',
     );
     if (themeColorMeta) {
       themeColorMeta.content = theme.background;
@@ -227,7 +226,7 @@ export function EvarThemeLanding() {
     const downloadSection = document.getElementById("download");
     if (downloadSection) {
       const prefersReduced = window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
+        "(prefers-reduced-motion: reduce)",
       ).matches;
       downloadSection.scrollIntoView({
         behavior: prefersReduced ? "auto" : "smooth",
@@ -248,14 +247,13 @@ export function EvarThemeLanding() {
     color: theme.textPrimary,
   };
 
-  const previewPresetBg =
-    !previewEnabled
-      ? "#f6f7f9"
-      : previewPreset === "OLED black"
-        ? "#000000"
-        : previewPreset === "Dim"
-          ? "#1b202b"
-          : "#10131a";
+  const previewPresetBg = !previewEnabled
+    ? "#f6f7f9"
+    : previewPreset === "OLED black"
+      ? "#000000"
+      : previewPreset === "Dim"
+        ? "#1b202b"
+        : "#10131a";
 
   const previewPresetText = !previewEnabled ? "#171a21" : "#eef3fa";
 
@@ -271,7 +269,6 @@ export function EvarThemeLanding() {
         Skip to main content
       </a>
 
-      {/* Living Isobar background filling the entire viewport */}
       <div
         className="pointer-events-none fixed inset-0 z-0 h-screen w-screen"
         aria-hidden="true"
@@ -294,7 +291,6 @@ export function EvarThemeLanding() {
         </Isobar>
       </div>
 
-      {/* Subtle readability gradient over contours while keeping contours visible */}
       <div
         className="pointer-events-none fixed inset-0 z-[1]"
         style={{ background: theme.overlayGradient }}
@@ -302,14 +298,12 @@ export function EvarThemeLanding() {
       />
 
       <div className="relative z-10 flex min-h-screen flex-col">
-        {/* Section 1: Hero (full screen) */}
         <section
           id="hero"
           className="flex min-h-screen flex-col justify-between px-5 pb-16 pt-6 sm:px-8 lg:px-12"
         >
           <header className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/evar-theme-shifter-logo-red.png"
                 alt="EvarTheme Shifter logo"
@@ -328,7 +322,10 @@ export function EvarThemeLanding() {
               </div>
             </div>
 
-            <nav aria-label="Primary" className="flex flex-wrap items-center gap-2 sm:gap-5">
+            <nav
+              aria-label="Primary"
+              className="flex flex-wrap items-center gap-2 sm:gap-5"
+            >
               <a
                 href="#about"
                 className="rounded-md px-2.5 py-1.5 text-sm font-medium underline-offset-4 hover:underline"
@@ -379,7 +376,6 @@ export function EvarThemeLanding() {
               className="surface-panel theme-transition w-full rounded-3xl border px-6 py-10 backdrop-blur-md sm:px-12 sm:py-14"
               style={panelStyle}
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/evar-theme-shifter-logo-red.png"
                 alt="EvarTheme Shifter logo"
@@ -412,7 +408,6 @@ export function EvarThemeLanding() {
                 GitHub and more.
               </p>
 
-              {/* Theme shifter controls */}
               <div className="mt-9 flex flex-col items-center gap-3">
                 <span
                   className="font-mono text-xs uppercase tracking-[0.16em]"
@@ -504,7 +499,6 @@ export function EvarThemeLanding() {
         </section>
 
         <main id="main-content" className="flex flex-col">
-          {/* About section */}
           <section
             id="about"
             className="mx-auto w-full max-w-6xl px-5 py-20 sm:px-8 lg:px-12"
@@ -540,7 +534,6 @@ export function EvarThemeLanding() {
             </div>
           </section>
 
-          {/* Section 2: What it does (3 cards) */}
           <section
             id="what-it-does"
             className="mx-auto w-full max-w-6xl px-5 py-20 sm:px-8 lg:px-12"
@@ -572,7 +565,10 @@ export function EvarThemeLanding() {
                         style={strongPanelStyle}
                         aria-hidden="true"
                       >
-                        <Icon className="h-5 w-5" style={{ color: theme.color }} />
+                        <Icon
+                          className="h-5 w-5"
+                          style={{ color: theme.color }}
+                        />
                       </div>
                       <h3 className="text-xl font-semibold tracking-tight">
                         {card.title}
@@ -590,7 +586,6 @@ export function EvarThemeLanding() {
             </div>
           </section>
 
-          {/* Section 3: Supported sites */}
           <section
             id="supported-sites"
             className="mx-auto w-full max-w-6xl px-5 py-20 sm:px-8 lg:px-12"
@@ -629,7 +624,10 @@ export function EvarThemeLanding() {
                     <h3 className="text-xl font-semibold">College portal</h3>
                     <span
                       className="rounded-full border px-3 py-1 font-mono text-xs"
-                      style={{ borderColor: theme.borderColor, color: theme.color }}
+                      style={{
+                        borderColor: theme.borderColor,
+                        color: theme.color,
+                      }}
                     >
                       Student Portal
                     </span>
@@ -640,7 +638,10 @@ export function EvarThemeLanding() {
                   >
                     college portal
                   </p>
-                  <p className="mt-3 text-sm leading-relaxed" style={{ color: theme.textMuted }}>
+                  <p
+                    className="mt-3 text-sm leading-relaxed"
+                    style={{ color: theme.textMuted }}
+                  >
                     Covers student login, dashboard cards, attendance tables,
                     marks, and schedules.
                   </p>
@@ -654,7 +655,10 @@ export function EvarThemeLanding() {
                     <h3 className="text-xl font-semibold">College LMS</h3>
                     <span
                       className="rounded-full border px-3 py-1 font-mono text-xs"
-                      style={{ borderColor: theme.borderColor, color: theme.color }}
+                      style={{
+                        borderColor: theme.borderColor,
+                        color: theme.color,
+                      }}
                     >
                       Learning Portal
                     </span>
@@ -665,7 +669,10 @@ export function EvarThemeLanding() {
                   >
                     college LMS
                   </p>
-                  <p className="mt-3 text-sm leading-relaxed" style={{ color: theme.textMuted }}>
+                  <p
+                    className="mt-3 text-sm leading-relaxed"
+                    style={{ color: theme.textMuted }}
+                  >
                     Covers the college LMS, course pages, lesson modules,
                     downloads, and quizzes.
                   </p>
@@ -674,7 +681,6 @@ export function EvarThemeLanding() {
             </div>
           </section>
 
-          {/* Section 4: Features */}
           <section
             id="features"
             className="mx-auto w-full max-w-6xl px-5 py-20 sm:px-8 lg:px-12"
@@ -697,10 +703,17 @@ export function EvarThemeLanding() {
                   className="surface-panel flex items-start gap-4 rounded-2xl border p-5 backdrop-blur-md"
                   style={panelStyle}
                 >
-                  <Power className="mt-0.5 h-5 w-5 shrink-0" style={{ color: theme.color }} aria-hidden="true" />
+                  <Power
+                    className="mt-0.5 h-5 w-5 shrink-0"
+                    style={{ color: theme.color }}
+                    aria-hidden="true"
+                  />
                   <div>
                     <h3 className="text-lg font-semibold">On/off toggle</h3>
-                    <p className="mt-1 text-sm leading-relaxed" style={{ color: theme.textMuted }}>
+                    <p
+                      className="mt-1 text-sm leading-relaxed"
+                      style={{ color: theme.textMuted }}
+                    >
                       Turn dark mode on or off anytime directly from the
                       extension popup.
                     </p>
@@ -711,12 +724,19 @@ export function EvarThemeLanding() {
                   className="surface-panel flex items-start gap-4 rounded-2xl border p-5 backdrop-blur-md"
                   style={panelStyle}
                 >
-                  <Layers className="mt-0.5 h-5 w-5 shrink-0" style={{ color: theme.color }} aria-hidden="true" />
+                  <Layers
+                    className="mt-0.5 h-5 w-5 shrink-0"
+                    style={{ color: theme.color }}
+                    aria-hidden="true"
+                  />
                   <div>
                     <h3 className="text-lg font-semibold">
                       Dark / OLED black / Dim themes
                     </h3>
-                    <p className="mt-1 text-sm leading-relaxed" style={{ color: theme.textMuted }}>
+                    <p
+                      className="mt-1 text-sm leading-relaxed"
+                      style={{ color: theme.textMuted }}
+                    >
                       Pick between classic Dark, pure OLED black, or softer Dim
                       surfaces.
                     </p>
@@ -736,7 +756,10 @@ export function EvarThemeLanding() {
                     <h3 className="text-lg font-semibold">
                       Brightness slider 70 to 110 percent
                     </h3>
-                    <p className="mt-1 text-sm leading-relaxed" style={{ color: theme.textMuted }}>
+                    <p
+                      className="mt-1 text-sm leading-relaxed"
+                      style={{ color: theme.textMuted }}
+                    >
                       Adjust screen brightness between 70% and 110% to match
                       your room lighting.
                     </p>
@@ -756,7 +779,10 @@ export function EvarThemeLanding() {
                     <h3 className="text-lg font-semibold">
                       Settings save in Chrome
                     </h3>
-                    <p className="mt-1 text-sm leading-relaxed" style={{ color: theme.textMuted }}>
+                    <p
+                      className="mt-1 text-sm leading-relaxed"
+                      style={{ color: theme.textMuted }}
+                    >
                       Your chosen theme, brightness level, and toggle state stay
                       saved across browser restarts.
                     </p>
@@ -767,12 +793,19 @@ export function EvarThemeLanding() {
                   className="surface-panel flex items-start gap-4 rounded-2xl border p-5 backdrop-blur-md"
                   style={panelStyle}
                 >
-                  <Globe className="mt-0.5 h-5 w-5 shrink-0" style={{ color: theme.color }} aria-hidden="true" />
+                  <Globe
+                    className="mt-0.5 h-5 w-5 shrink-0"
+                    style={{ color: theme.color }}
+                    aria-hidden="true"
+                  />
                   <div>
                     <h3 className="text-lg font-semibold">
                       Works on login, dashboard, tables, lessons and quizzes
                     </h3>
-                    <p className="mt-1 text-sm leading-relaxed" style={{ color: theme.textMuted }}>
+                    <p
+                      className="mt-1 text-sm leading-relaxed"
+                      style={{ color: theme.textMuted }}
+                    >
                       Every main view across the college portal and college LMS
                       stays styled and easy to read.
                     </p>
@@ -780,7 +813,6 @@ export function EvarThemeLanding() {
                 </li>
               </ul>
 
-              {/* Interactive preview of extension controls */}
               <div
                 className="surface-panel flex flex-col justify-between rounded-2xl border p-7 backdrop-blur-md"
                 style={panelStyle}
@@ -853,7 +885,7 @@ export function EvarThemeLanding() {
                                 {preset}
                               </button>
                             );
-                          }
+                          },
                         )}
                       </div>
                     </div>
@@ -904,15 +936,15 @@ export function EvarThemeLanding() {
                     Attendance and Course Notes
                   </p>
                   <p className="mt-1 text-sm opacity-80">
-                    Mode: {previewEnabled ? previewPreset : "Original light site"}{" "}
-                    at {previewBrightness}% brightness.
+                    Mode:{" "}
+                    {previewEnabled ? previewPreset : "Original light site"} at{" "}
+                    {previewBrightness}% brightness.
                   </p>
                 </div>
               </div>
             </div>
           </section>
 
-          {/* Section 5: How to install tutorial */}
           <section
             id="install"
             className="mx-auto w-full max-w-6xl px-5 py-20 sm:px-8 lg:px-12"
@@ -979,7 +1011,6 @@ export function EvarThemeLanding() {
             </div>
           </section>
 
-          {/* Section 6: Big scrolled theme button */}
           <section
             aria-label="Quick theme switch and jump to download"
             className="mx-auto flex w-full max-w-6xl items-center justify-center px-5 py-16 sm:px-8 lg:px-12"
@@ -1012,7 +1043,6 @@ export function EvarThemeLanding() {
             </div>
           </section>
 
-          {/* Section 7: Download section */}
           <section
             id="download"
             className="mx-auto w-full max-w-6xl px-5 py-20 sm:px-8 lg:px-12"
@@ -1034,9 +1064,9 @@ export function EvarThemeLanding() {
                 className="mt-4 max-w-xl text-base leading-relaxed sm:text-lg"
                 style={{ color: theme.textMuted }}
               >
-                Get it in one click from Microsoft Edge Add-ons, or download
-                the zip for Chrome and Firefox and follow the browser install
-                steps above.
+                Get it in one click from Microsoft Edge Add-ons, or download the
+                zip for Chrome and Firefox and follow the browser install steps
+                above.
               </p>
 
               <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
@@ -1062,12 +1092,8 @@ export function EvarThemeLanding() {
                 </span>
               </div>
 
-              <p
-                className="mt-4 text-sm"
-                style={{ color: theme.textMuted }}
-              >
-                Official Edge Add-ons listing, one click install, version
-                1.4.6.
+              <p className="mt-4 text-sm" style={{ color: theme.textMuted }}>
+                Official Edge Add-ons listing, one click install, version 1.4.6.
               </p>
 
               <div className="mt-6 flex flex-wrap items-center justify-center gap-6 text-sm font-medium">
@@ -1099,7 +1125,6 @@ export function EvarThemeLanding() {
             </div>
           </section>
 
-          {/* Section 8: Credits, Privacy Policy and Legal Terms */}
           <section
             id="legal"
             className="mx-auto w-full max-w-6xl px-5 py-20 sm:px-8 lg:px-12"
@@ -1134,7 +1159,9 @@ export function EvarThemeLanding() {
                 >
                   Privacy Policy
                 </p>
-                <h2 className="mt-2 text-xl font-bold">Your data stays local</h2>
+                <h2 className="mt-2 text-xl font-bold">
+                  Your data stays local
+                </h2>
                 <p
                   className="mt-3 text-base leading-relaxed"
                   style={{ color: theme.textMuted }}
@@ -1168,8 +1195,8 @@ export function EvarThemeLanding() {
                   className="mt-3 text-base leading-relaxed"
                   style={{ color: theme.textMuted }}
                 >
-                  By installing EvarTheme Shifter you agree to use it for
-                  study only, on your own browser, at your own risk.
+                  By installing EvarTheme Shifter you agree to use it for study
+                  only, on your own browser, at your own risk.
                 </p>
                 <a
                   href="/terms"
@@ -1212,7 +1239,6 @@ export function EvarThemeLanding() {
             </div>
           </section>
 
-          {/* Section 9: FAQ */}
           <section
             id="faq"
             className="mx-auto w-full max-w-6xl px-5 py-20 sm:px-8 lg:px-12"
@@ -1254,7 +1280,6 @@ export function EvarThemeLanding() {
           </section>
         </main>
 
-        {/* Section 10: Footer */}
         <footer
           className="mt-10 border-t px-5 py-10 backdrop-blur-md sm:px-8 lg:px-12"
           style={{
@@ -1286,6 +1311,24 @@ export function EvarThemeLanding() {
                 style={{ color: theme.textMuted }}
               >
                 Legal
+              </a>
+              <a
+                href="https://github.com/p3xz/evar-theme-shifter"
+                target="_blank"
+                rel="noreferrer"
+                className="underline-offset-4 hover:underline"
+                style={{ color: theme.textMuted }}
+              >
+                Extension on GitHub
+              </a>
+              <a
+                href="https://github.com/p3xz/evar-theme-shifter-web"
+                target="_blank"
+                rel="noreferrer"
+                className="underline-offset-4 hover:underline"
+                style={{ color: theme.textMuted }}
+              >
+                Website on GitHub
               </a>
             </div>
             <p className="text-sm" style={{ color: theme.textMuted }}>

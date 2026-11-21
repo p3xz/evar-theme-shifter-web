@@ -23,7 +23,6 @@ type Props = {
   children?: ReactNode;
 };
 
-// Small, fast value noise with smooth interpolation.
 function makeNoise(seed = 7) {
   const perm = new Uint8Array(512);
   let s = seed;
@@ -219,7 +218,7 @@ export function Isobar({
 
     const loop = (now: number) => {
       raf = requestAnimationFrame(loop);
-      if (!visible || document.hidden || now - last < 50) return; // ~20fps is plenty for weather
+      if (!visible || document.hidden || now - last < 50) return;
       last = now;
       draw(now);
     };

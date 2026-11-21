@@ -75,7 +75,10 @@ export function LegalPage({
         <div className="mx-auto flex w-full max-w-4xl flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-medium">
             <span className="font-semibold">EvarTheme Shifter</span>
-            <Link href="/privacy" className="underline-offset-4 hover:underline">
+            <Link
+              href="/privacy"
+              className="underline-offset-4 hover:underline"
+            >
               Privacy Policy
             </Link>
             <Link href="/terms" className="underline-offset-4 hover:underline">
@@ -84,6 +87,22 @@ export function LegalPage({
             <Link href="/legal" className="underline-offset-4 hover:underline">
               Legal
             </Link>
+            <a
+              href="https://github.com/p3xz/evar-theme-shifter"
+              target="_blank"
+              rel="noreferrer"
+              className="underline-offset-4 hover:underline"
+            >
+              Extension on GitHub
+            </a>
+            <a
+              href="https://github.com/p3xz/evar-theme-shifter-web"
+              target="_blank"
+              rel="noreferrer"
+              className="underline-offset-4 hover:underline"
+            >
+              Website on GitHub
+            </a>
           </div>
           <p className="text-sm" style={{ color: "#b6c7de" }}>
             Built for college students.
